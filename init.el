@@ -393,10 +393,7 @@ It should only modify the values of Spacemacs settings."
    ;; with 2 themes variants, one dark and one light)
 
    dotspacemacs-themes '(doom-gruvbox-light
-                         doom-solarized-light
-                         doom-sourcerer
-                         kaolin-valley-dark
-                         doom-solarized-dark
+                         doom-gruvbox
                          spacemacs-light
                          spacemacs-dark)
 
