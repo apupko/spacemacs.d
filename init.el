@@ -71,6 +71,7 @@ This function should only modify configuration layer settings."
               cider-result-overlay-position 'at-point ;; results shown right after expression
               cider-overlays-use-font-lock t
               cider-repl-buffer-size-limit 100        ;; limit lines shown in REPL buffer
+              clojure-enable-clj-refactor t
               )
 
      ;; Nyan cat indicating relative position in current buffer
@@ -152,7 +153,7 @@ This function should only modify configuration layer settings."
 
      ;; SPC ' runs shell in a popup buffer
      (shell :variables
-            shell-default-shell 'eshell
+            shell-default-shell 'multi-term
             shell-default-height 30
             shell-default-position 'bottom)
 
@@ -170,7 +171,9 @@ This function should only modify configuration layer settings."
                          doom-modeline-buffer-file-name-style 'relative-to-project
                          doom-modeline-display-default-persp-name t
                          doom-modeline-minor-modes nil
-                         doom-modeline-modal-icon nil)
+                         doom-modeline-modal-icon nil
+                         doom-modeline-env-version t)
+
 
      ;; Spell as you type with Flyspell package,
      ;; requires external command - ispell, hunspell, aspell
@@ -399,6 +402,7 @@ It should only modify the values of Spacemacs settings."
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
    dotspacemacs-mode-line-theme '(doom)
+   ;; dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -1176,7 +1180,7 @@ before packages are loaded."
   (setq eshell-funcs (list esh-dir esh-git))
 
   ;; Enable the new eshell prompt
-  (setq eshell-prompt-function 'esh-prompt-func)
+  ;; (setq eshell-prompt-function 'esh-prompt-func)
 
   ;; End of Eshell
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1186,7 +1190,7 @@ before packages are loaded."
   ;; Shell configuration
   ;;
   ;; Use zsh for default multi-term shell
-  ;; (setq multi-term-program "/usr/bin/zsh")
+  (setq multi-term-program "/bin/zsh")
   ;;
   ;; End of Shell configuration
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
